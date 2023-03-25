@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  anup-jha:
+    environment:
+      - NODE_ENV=development
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/usr/src/app'
+      - '/usr/src/node_modules'
+    container_name: node-app
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
